@@ -61,7 +61,8 @@ function! ruby#rspec_fold(line)
     return 1
   endif
 
-  let it_line_regex = '^\s*x\?it\s.\{-}do\s*$'
+  " let it_line_regex = '^\s*x\?it\s.\{-}do\s*$'
+  let it_line_regex = '^\s*x\?\(it\|describe\|context\)\s.\{-}do\s*$'
   " fold starts on an `it` line
   if getline(a:line) =~# it_line_regex
     return 1
